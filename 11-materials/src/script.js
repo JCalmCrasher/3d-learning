@@ -37,18 +37,22 @@ const gradientTexture = textureLoader.load("/textures/gradients/3.jpg");
 /**
  * Objects
  */
-const material = new THREE.MeshStandardMaterial();
-material.metalness = 1
-material.roughness = 1
-material.metalnessMap = doorMetalnessTexture
-material.roughnessMap = doorRoughnessTexture
-// material.normalMap = doorHeightTexture
-material.map = doorColorTexture;
-material.aoMap = doorAmbientOcclusionTexture
-material.aoMapIntensity = 1
-material.displacementMap = doorHeightTexture
-material.displacementScale = 0.1
+const material = new THREE.MeshPhysicalMaterial();
+material.metalness = 0;
+material.roughness = 0;
+// material.metalnessMap = doorMetalnessTexture;
+// material.roughnessMap = doorRoughnessTexture;
+// // material.normalMap = doorHeightTexture
+// material.map = doorColorTexture;
+// material.aoMap = doorAmbientOcclusionTexture;
+// material.aoMapIntensity = 1;
+// // material.displacementMap = doorHeightTexture;
+// material.displacementScale = 0.1;
+// material.clearcoat = 1;
 
+material.transmission = 1;
+material.ior = 2;
+material.thickness = 0.5;
 
 // const ambientLight = new THREE.AmbientLight(0xffffff, 1);
 // scene.add(ambientLight);
